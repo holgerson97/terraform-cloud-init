@@ -26,7 +26,7 @@ data "template_file" "user-data" {
 
         root_ssh_key    = var.root-ssh-key
         ansible_ssh_key = var.ansible-ssh-key
-        server_passwd   = random_password.server-password
+        server_passwd   = random_password.server-password.result
 
     }
 }
