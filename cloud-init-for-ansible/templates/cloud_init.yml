@@ -27,4 +27,3 @@ packages:
   - vim
   - curl
   - rsync
-  - htop

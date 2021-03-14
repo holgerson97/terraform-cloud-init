@@ -11,4 +11,3 @@ variable "ansible-ssh-key" {
     sensitive = true
   
 }
-
