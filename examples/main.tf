@@ -16,7 +16,7 @@ provider "aws" {
 
 module "cloud_init" {
 
-  source = "https://github.com/holgerson97/terraform-cloud-init//module"
+  source = "github.com/holgerson97/terraform-cloud-init//module"
 
   root-ssh-key = "ssh-key"
   ansible-ssh-key = "root-key"
