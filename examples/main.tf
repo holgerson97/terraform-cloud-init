@@ -7,14 +7,17 @@ terraform {
   }
 }
 
+variable "AWS_ACCESS_KEY_ID" {}
+
+variable "AWS_SECRET_ACCESS_KEY" {}
+
 provider "aws" {
 
-  region     = var.AWS_DEFAULT_REGION
+  region     = "us-west-2"
   access_key = var.AWS_ACCESS_KEY_ID
   secret_key = var.AWS_SECRET_ACCESS_KEY
 
 }
-
 
 module "cloud_init" {
 
@@ -27,7 +30,7 @@ module "cloud_init" {
 
 resource "aws_instance" "example" {
 
-  ami                    = "ami-0c55b159cbfafe1f0"
+  ami                    = "ami-005e54dee72cc1d00"
   instance_type          = "t2.micro"
 
   user_data = module.cloud_init.user_data
