@@ -1,0 +1,19 @@
+#cloud-config
+
+users:
+  - default
+  - name: root
+    lock_passwd: true
+    passwd: ${server_passwd}
+    ssh_authorized_keys:
+      - ${root_ssh_key}
+
+  - name: ansible
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    lock_passwd: true
+    passwd: ${server_passwd}
+    ssh_authorized_keys:
+      - ${ansible_ssh_key}
+
+ssh_pwauth: true
+chpasswd: {expire: false}
